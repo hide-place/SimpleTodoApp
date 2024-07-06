@@ -50,7 +50,7 @@ function updateTaskList() {
   const tasks = getTasksFromLocalStorage();
   if (tasks) {
     tasksList.innerHTML = '';  // Clear existing tasks before adding new ones
-    for (const task of tasks) {
+    for (var task of tasks) {
       const newElement = document.createElement('li');
       newElement.innerHTML = `
         <li class="li">
@@ -68,7 +68,7 @@ function updateTaskList() {
 
 // Add a task
 function addTask() {
-  const taskValue = taskInput.value.trim();
+  var taskValue = taskInput.value.trim();
   if (taskValue.length > 16) {
     taskValue = taskValue.slice(0, 15) + '...';
   }
